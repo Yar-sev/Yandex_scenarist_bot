@@ -67,10 +67,10 @@ def mech(id):
         markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
         for text in options:
             markup.add(text)
-        with open(locations["locations"][lvl]["file"], "rb") as h:
-            if ".png" in h.name:
-                bot.send_photo(id, h)
-            else:
-                bot.send_video(id, h)
+        h = locations["locations"][lvl]["file"]
+        if ".png" in h:
+            bot.send_photo(id, h)
+        else:
+            bot.send_video(id, h)
         bot.send_message(id, question, reply_markup=markup)
 bot.polling()
