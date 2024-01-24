@@ -8,5 +8,6 @@
 https://github.com/Yar-sev/bot_quest/tree/master
 # Вот так будет идти сюжет с выборами
 ![quest (1)](https://github.com/Yar-sev/bot_quest/assets/152083594/8d022f46-4cd0-41ec-b45e-b74c663739c3)
+есть всего 4 концовки - концовка на 4 или 5 (выигрыш), концовка на 2 или 3 (проигрыш)
 # ссылка на бота
 https://t.me/Yarik5669bot
