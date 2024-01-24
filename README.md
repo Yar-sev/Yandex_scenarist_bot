@@ -6,3 +6,7 @@
 если 4,5 - вы выиграли
 # ссылка на репозиторий
 https://github.com/Yar-sev/bot_quest/tree/master
+# Вот так будет идти сюжет с выборами
+![quest (1)](https://github.com/Yar-sev/bot_quest/assets/152083594/8d022f46-4cd0-41ec-b45e-b74c663739c3)
+# ссылка на бота
+https://t.me/Yarik5669bot
