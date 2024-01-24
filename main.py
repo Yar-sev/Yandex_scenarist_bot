@@ -1,5 +1,4 @@
 import json
-import os
 import telebot
 from info import informat
 from telebot import types
@@ -9,8 +8,8 @@ bot = telebot.TeleBot(token=token)
 def add_user(id,name):
     with open('data.json') as f:
         data = json.load(f)
-    if id in data:
-        print(None)
+    if str(id) in data["users"].keys():
+        print()
     else:
         data['users'][str(id)] = name, False, "kr"
         with open('data.json', 'w') as outfile:
@@ -24,11 +23,11 @@ def sv_data(id, lvl):
 
 @bot.message_handler(content_types = ['text'])
 def vvod(message):
+    add_user(message.chat.id, message.from_user.first_name)
     with open('data.json') as f:
         data = json.load(f)
     if data['users'][str(message.chat.id)][1] == False:
         if message.text == "/start" or message.text == "/help":
-            add_user(message.chat.id, message.from_user.first_name)
             bot.send_message(message.chat.id, informat(message.chat.id, message.text))
         elif message.text == "/quest":
             quest(message.chat.id)
