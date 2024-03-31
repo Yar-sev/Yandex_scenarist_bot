@@ -24,14 +24,11 @@ def enter(message):
         check(message.chat.id)
     elif msg == "/start_history":
         user_database(message.chat.id)
-        if len(datafr()) == 2 and user(message.chat.id) == False:
-            bot.send_message(message.chat.id, "тебе нельзя")
+        if select_data(message.chat.id)[0][2] <= MAX_MODEL_TOKENS:
+            bot.send_message(message.chat.id, "у вас мало токенов")
         else:
-            if select_data(message.chat.id)[0][2] <= MAX_MODEL_TOKENS:
-                bot.send_message(message.chat.id, "у вас мало токенов")
-            else:
-                logging.info(msg)
-                scenariy(message)
+            logging.info(msg)
+            scenariy(message)
     elif msg == "/whole_history":
         try:
             bot.send_message(message.chat.id, select_data(message.chat.id)[0][8])
